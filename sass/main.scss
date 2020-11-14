@@ -1,3 +1,5 @@
+// VARIABLES
+
 $cyan: hsl(179, 62%, 43%);
 $bright-yellow: hsl(71, 73%, 54%);
 $light-gray: hsl(204, 43%, 93%);
@@ -5,7 +7,9 @@ $grayish-blue: hsl(218, 22%, 67%);
 
 $font-primary: 'Karla', sans-serif;
 
-$bp-mobile: 23.4375em;
+$bp-mobile: 35.3125em;
+
+// BASE
 
 *,
 *::before,
@@ -22,6 +26,131 @@ html {
 
 body {
     font-family: $font-primary;
-    font-size: 1.1rem;
+    font-weight: 400;
     background-color: $light-gray;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// MAIN
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60rem;
+    border-radius: 5px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+
+    @media only screen and (max-width: $bp-mobile) {
+        border-radius: 0px;
+    }
+
+}
+
+.heading {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 3rem;
+
+
+    &__header-1 {
+        color: #2bb3b1;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    &__header-2 {
+        color: hsl(71, 73%, 54%);
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    &__paragraph {
+        font-size: 1.5rem;
+        opacity: 40%;
+    }
+}
+
+.price {
+    min-width: 50%;
+    background-color: #2bb3b1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
+
+    & > * {
+        margin: 1rem 0;
+    }
+
+    &__header {
+        color: #ffffff;
+        font-size: 1.7rem;
+        opacity: 80%;
+    }
+
+    &__amount {
+        display: flex;
+        align-items: center;
+    }
+
+    &__amount-number {
+        color: #ffffff;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-right: 1rem;
+    }
+
+    &__amount-period {
+        color: #ffffff;
+        font-size: 1.2rem;
+        opacity: 60%;
+    }
+
+    &__paragraph {
+        color: #ffffff;
+        font-size: 1.5rem;
+        opacity: 80%;
+    }
+
+    &__btn {
+        background-color: hsl(71, 73%, 54%);
+        color: #ffffff;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        padding: 1.2rem 2rem;
+        border-radius: 5px;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+}
+
+.about {
+    min-width: 50%;
+    background-color: #4abebd;
+    padding: 3rem;
+    flex: 1 1 auto;
+
+    &__header {
+        color: #ffffff;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+        opacity: 80%;
+    }
+
+    &__list {
+        color: #ffffff;
+        list-style: none;
+        opacity: 60%;
+        line-height: 2rem;
+        font-size: 1.2rem;
+    }
 }
